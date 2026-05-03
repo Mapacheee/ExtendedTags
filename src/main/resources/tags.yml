@@ -1,0 +1,90 @@
+tags:
+  - key: "newbie"
+    name: "<gray>[Newbie]<reset>"
+    icon: "WOODEN_SWORD"
+    permission: ""
+    requires-purchase: false
+    price: 0.0
+    enabled: true
+    priority: 100
+
+  - key: "killer"
+    name: "<red>[Killer]<reset>"
+    icon: "RED_DYE"
+    permission: ""
+    requires-purchase: true
+    price: 250.0
+    enabled: true
+    priority: 90
+
+  - key: "hunter"
+    name: "<dark_red>[Hunter]<reset>"
+    icon: "CROSSBOW"
+    permission: ""
+    requires-purchase: true
+    price: 350.0
+    enabled: true
+    priority: 85
+
+  - key: "beast"
+    name: "<gold>[Beast]<reset>"
+    icon: "GOLDEN_SWORD"
+    permission: ""
+    requires-purchase: true
+    price: 500.0
+    enabled: true
+    priority: 80
+
+  - key: "pro"
+    name: "<aqua>[Pro]<reset>"
+    icon: "TRIDENT"
+    permission: "extendedtags.pro"
+    requires-purchase: false
+    price: 0.0
+    enabled: true
+    priority: 70
+
+  - key: "master"
+    name: "<dark_aqua>[Master]<reset>"
+    icon: "BOW"
+    permission: "extendedtags.master"
+    requires-purchase: false
+    price: 0.0
+    enabled: true
+    priority: 65
+
+  - key: "legend"
+    name: "<gradient:gold:yellow>[Legend]<reset>"
+    icon: "DIAMOND_SWORD"
+    permission: ""
+    requires-purchase: true
+    price: 750.0
+    enabled: true
+    priority: 60
+
+  - key: "champion"
+    name: "<gradient:gold:yellow>[Champion]<reset>"
+    icon: "NETHER_STAR"
+    permission: ""
+    requires-purchase: true
+    price: 1500.0
+    enabled: true
+    priority: 50
+
+  - key: "elite"
+    name: "<gradient:blue:aqua>[Elite]<reset>"
+    icon: "SHULKER_BOX"
+    permission: ""
+    requires-purchase: true
+    price: 2500.0
+    enabled: true
+    priority: 40
+
+  - key: "god"
+    name: "<gradient:red:gold>[GOD]<reset>"
+    icon: "DRAGON_EGG"
+    permission: ""
+    requires-purchase: true
+    price: 10000.0
+    enabled: true
+    priority: 10

@@ -1,1 +1,2 @@
-feature-enabled: true
+gui-title: "<dark_gray>Tags <gray>(<gold><page><gray>/<gold><pages><gray>)"
+default-tag: ""

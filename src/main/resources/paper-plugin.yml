@@ -1,12 +1,18 @@
-name: PaperWinterTemplate
+name: ExtendedTags
 version: ${version}
-main: me.mapacheee.template.TemplatePlugin
+main: me.mapacheee.extendedtags.ExtendedTagsPlugin
 api-version: '1.21'
-description: A template plugin using the Winter Framework
+description: ${description}
 author: Mapacheee
 folia-supported: true
 dependencies:
   server:
     MapacheeeLib:
+      load: BEFORE
+      required: true
+    PlaceholderAPI:
+      load: BEFORE
+      required: true
+    Vault:
       load: BEFORE
       required: true

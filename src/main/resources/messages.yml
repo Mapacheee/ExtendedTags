@@ -1,1 +1,78 @@
-welcome: "<green>Welcome to the server!"
+prefix: "<bold><gradient:#CB356B:#BD3F32>ExtendedTags</gradient></bold> <dark_gray>»</dark_gray> <gray>"
+
+plugin-reloaded: "<gray>Plugin reloaded successfully.</gray>"
+tag-created: "<gray>Tag created: <tag></gray>"
+tag-deleted: "<gray>Tag deleted: <tag></gray>"
+tag-updated: "<gray>Tag updated: <tag></gray>"
+tag-not-found: "<color:#BD3F32>Tag not found.</color>"
+tag-already-exists: "<color:#BD3F32>Tag already exists: <tag></color>"
+tag-equipped: "<gray>Equipped tag: <tag>"
+tag-unequipped: "<gray>Tag unequipped.</gray>"
+tag-granted: "<gray>Tag granted to <player>: <tag></gray>"
+tag-revoked: "<gray>Tag revoked from <player>: <tag></gray>"
+tag-purchased: "<gray>Tag purchased: <tag> for <price></gray>"
+target-not-found: "<color:#BD3F32>Target player not found.</color>"
+invalid-material: "<color:#BD3F32>Invalid material.</color>"
+
+tags-gui-title: "<gradient:#CB356B:#BD3F32>Tags <gray>(<gold><page><gray>/<gold><pages><gray>)</gradient>"
+tags-gui-no-tags: "<gray>No tags available.</gray>"
+tags-gui-previous-page: "<dark_gray>← Previous</dark_gray>"
+tags-gui-next-page: "<dark_gray>Next →</dark_gray>"
+tags-gui-unequip-item: "<color:#BD3F32>Unequip Tag</color>"
+tags-gui-price-lore: "<yellow>Price: <price></yellow>"
+tags-gui-selected-lore: "<green>✓ Selected</green>"
+tags-gui-click-to-unequip: "<gray>Click to unequip</gray>"
+tags-gui-available-lore: "<green>Available</green>"
+tags-gui-click-to-equip: "<gray>Click to equip</gray>"
+tags-gui-unavailable-purchase-lore: "<color:#BD3F32>Purchase required</color>"
+tags-gui-click-to-buy: "<gray>Click to buy</gray>"
+tags-gui-requires-higher-rank-lore: "<color:#BD3F32>Requires higher rank</color>"
+tags-gui-current-rank-lore: "<gray>Current rank: %luckperms_primary_group_name%</gray>"
+tags-gui-unavailable-permission-lore: "<color:#BD3F32>Permission required</color>"
+tags-gui-permission-required-lore: "<gray>Permission: <permission></gray>"
+
+requires-higher-rank-tag: "<color:#BD3F32>Requires higher rank.</color>"
+no-permission-tag: "<color:#BD3F32>Permission required: <permission></color>"
+economy-unavailable: "<color:#BD3F32>Economy unavailable.</color>"
+insufficient-funds-tag: "<color:#BD3F32>Insufficient funds. Price: <price></color>"
+
+tag-editor-title: "<gradient:#CB356B:#BD3F32>Tag Editor <gray>(<gold><page><gray>/<gold><pages><gray>)</gradient>"
+tag-editor-no-tags: "<gray>No tags to edit.</gray>"
+tag-editor-previous-page: "<dark_gray>← Previous</dark_gray>"
+tag-editor-next-page: "<dark_gray>Next →</dark_gray>"
+tag-editor-create-item: "<gradient:#CB356B:#BD3F32>Create New Tag</gradient>"
+tag-editor-delete-item: "<color:#BD3F32>Delete Tag</color>"
+tag-editor-delete-lore:
+  - "<color:#BD3F32>Delete this tag"
+  - "<gray>This action cannot be undone"
+tag-editor-back-item: "<dark_gray>← Back</dark_gray>"
+tag-editor-back-lore:
+  - "<gray>Back to list"
+tag-editor-save-item: "<green>Save</green>"
+tag-editor-save-lore:
+  - "<green>Save and exit"
+tag-editor-key-lore:
+  - "<gray>Tag identifier"
+  - "<gray>Click to edit"
+tag-editor-name-lore:
+  - "<gray>Tag display"
+  - "<gray>Click to edit"
+tag-editor-icon-lore:
+  - "<gray>Item icon"
+  - "<green>Left click: Use held item"
+  - "<yellow>Right click: Enter material"
+tag-editor-permission-lore:
+  - "<gray>Required permission"
+  - "<gray>Click to edit"
+tag-editor-requires-purchase-lore:
+  - "<gray>Requires purchase"
+  - "<gray>Click to toggle"
+tag-editor-price-lore:
+  - "<gray>Price"
+  - "<gray>Click to edit"
+tag-editor-enabled-lore:
+  - "<gray>Enabled"
+  - "<gray>Click to toggle"
+tag-editor-priority-lore:
+  - "<gray>Priority"
+  - "<gray>Click to edit"
