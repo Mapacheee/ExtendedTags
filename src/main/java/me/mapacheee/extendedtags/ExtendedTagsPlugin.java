@@ -5,6 +5,7 @@ import com.google.inject.Scopes;
 import com.thewinterframework.paper.PaperWinterPlugin;
 import com.thewinterframework.plugin.WinterBootPlugin;
 import com.thewinterframework.service.annotation.Service;
+import me.mapacheee.extendedtags.data.TagStorage;
 
 @WinterBootPlugin
 public final class ExtendedTagsPlugin extends PaperWinterPlugin {
@@ -37,6 +38,14 @@ public final class ExtendedTagsPlugin extends PaperWinterPlugin {
 
     @Override
     public void onPluginDisable() {
+        try {
+            if (instance != null) {
+                TagStorage storage = getService(TagStorage.class);
+                storage.flush();
+            }
+        } catch (Exception e) {
+            getLogger().warning("Failed to flush tag storage on disable");
+        }
         instance = null;
         super.onPluginDisable();
     }

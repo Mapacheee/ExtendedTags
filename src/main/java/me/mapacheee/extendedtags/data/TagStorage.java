@@ -57,6 +57,7 @@ public final class TagStorage {
 
             loadTags();
             loadPlayerData();
+            migrateOldPlayerDataFormat();
 
             logger.info("Loaded {} tags and {} player data entries", tags.size(), playerData.size());
         } catch (Exception e) {
@@ -177,9 +178,9 @@ public final class TagStorage {
             for (PlayerTagData data : playerData.values()) {
                 if (data.getUuid() != null) {
                     Map<String, Object> map = new LinkedHashMap<>();
-                    map.put("name", data.getPlayerName());
+                    map.put("player-name", data.getPlayerName());
                     map.put("owned-tags", new ArrayList<>(data.getOwnedTags()));
-                    map.put("equipped", data.getEquippedTag());
+                    map.put("equipped-tag", data.getEquippedTag());
                     playersMap.put(data.getUuid().toString(), map);
                 }
             }
@@ -191,7 +192,54 @@ public final class TagStorage {
     }
 
     public void reload() {
-        loadTags();
-        loadPlayerData();
+        try {
+            tagsNode = tagsLoader.load();
+            playerDataNode = playerDataLoader.load();
+            loadTags();
+            loadPlayerData();
+            logger.info("Reloaded {} tags and {} player data entries", tags.size(), playerData.size());
+        } catch (IOException e) {
+            logger.error("Failed to reload storage", e);
+        }
+    }
+
+    public void flush() {
+        persistTags();
+        persistPlayerData();
+        logger.info("Flushed all data to disk");
+    }
+
+    private void migrateOldPlayerDataFormat() {
+        try {
+            ConfigurationNode playersNode = playerDataNode.node("players");
+            boolean needsMigration = false;
+
+            for (ConfigurationNode playerNode : playersNode.childrenMap().values()) {
+                if (playerNode.node("name").virtual()) continue;
+
+                if (!playerNode.node("player-name").virtual()) continue;
+
+                String oldName = playerNode.node("name").getString();
+                String oldEquipped = playerNode.node("equipped").getString("");
+
+                if (oldName != null || !oldEquipped.isEmpty()) {
+                    if (oldName != null) {
+                        playerNode.node("player-name").set(oldName);
+                        playerNode.node("name").set(null);
+                    }
+                    playerNode.node("equipped-tag").set(oldEquipped);
+                    playerNode.node("equipped").set(null);
+                    needsMigration = true;
+                }
+            }
+
+            if (needsMigration) {
+                playerDataLoader.save(playerDataNode);
+                loadPlayerData();
+                logger.info("Migrated player data to new format");
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to migrate old player data format", e);
+        }
     }
 }
