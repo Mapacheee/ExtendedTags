@@ -12,7 +12,7 @@ java {
 }
 
 group = "me.mapacheee"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.1-SNAPSHOT"
 description = "ExtendedTags - Advanced tags plugin for modern Minecraft"
 
 repositories {
